@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.testng.annotations.Test;
 import common.Login;
 import dataproviders.DataProviderClass;
+import static org.testng.Assert.*;
 
 public class TestLoginPass extends Login {
 
@@ -32,11 +33,11 @@ public class TestLoginPass extends Login {
 	    driver.findElement(By.id("tlogin_password")).clear();
 	    driver.findElement(By.id("tlogin_password")).sendKeys(pass);
 	    driver.findElement(By.name("login_submit")).click();
-        /*    try {
-      		assertTrue(isElementPresent(By.xpath("//main[@id='content']/div[3]/div/div")));
-   	    } catch (Error e) {
-      		verificationErrors.append(e.toString());
-   	    }*/
-    	    driver.findElement(By.xpath("//a[contains(@href, '/logout')]")).click();
+         try {
+	      assertTrue(isElementPresent(By.xpath("//main[@id='content']/div[3]/div/div")));
+	    } catch (Error e) {
+	      verificationErrors.append(e.toString());
+	    }
+	    	   driver.findElement(By.xpath("//a[contains(@href, '/logout')]")).click();
 	  }
 }
