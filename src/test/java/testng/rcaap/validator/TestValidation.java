@@ -10,9 +10,10 @@ public class TestValidation extends TestBase {
 
 	 @Test(dataProvider = "validators-url", dataProviderClass = DataProviderClass.class)
 	 public void TestValidator(String baseUrl) throws Exception {
-	    driver.get(baseUrl + "/validator2/?locale=en");
-	    System.out.println("URL" + baseUrl + "?locale=en");
-	    driver.findElement(By.linkText("Validate now")).click();
+	    driver.get(baseUrl + "/validator2/"); 
+	    System.out.println("URL" + baseUrl);
+	    //driver.findElement(By.linkText("Validate now")).click();
+	    driver.findElement(By.xpath("//p[2]/a")).click();
 	    driver.findElement(By.id("resource")).clear();
 	    driver.findElement(By.id("resource")).sendKeys("arca");
 	    driver.findElement(By.id("url")).clear();
