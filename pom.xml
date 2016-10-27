@@ -36,7 +36,7 @@
 		        </systemPropertyVariables>
 		        <suiteXmlFiles>
 		            <!-- <suiteXmlFile>testng.xml</suiteXmlFile>-->
-		            <suiteXmlFile>${suitefilename}</suiteXmlFile>
+		            <suiteXmlFile>${suitefile}</suiteXmlFile>
 		        </suiteXmlFiles>
 		        
 		    </configuration>
