@@ -55,15 +55,25 @@ public class DataProviderClass {
 	   * URL for SARIS with PLUMX
 	   * We must have na handle to specify the test, bcause plumx tests need an item
 	   */
-	  @DataProvider(name = "plumx")
-	  public static Object[][] urlsPlumX() {
+	  @DataProvider(name = "plumx-handle")
+	  public static Object[][] urlsPlumXHandle() {
 		  return new String[][] {
-			  {"http://rihuc.huc.min-saude.pt", "10400.4", "1972"}
+			  {"http://rihuc.huc.min-saude.pt", "10400.4"},
     		};
-      
-      /*return Arrays.stream(plumx)
-              .map(s -> new Object[][]{s})
-              .iterator();*/
+	  }
+	  
+	  /*
+	   * SARI - URL with LDAP
+	   */
+	  @DataProvider(name = "plumx")
+	  public static Iterator<Object[]> plumx() {
+      String[] urls = {
+    		  "http://rihuc.huc.min-saude.pt"
+       
+      };
+      return Arrays.stream(urls)
+              .map(s -> new Object[]{s})
+              .iterator();
 	  }
 	  
 	  /*
