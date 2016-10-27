@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Threading count to execute paralel tests and parallel set to tests (classes see documentation) -->
+<!-- I think if We have 2 classes they will run in parallel -->
+<suite name="SARI" parallel="classes" thread-count="3"> 
+ <test name="SARIChrome">
+  <!-- These are defined in the maven and in the Test Files -->
+  <!-- groups are overlaped -->
+   <method-selectors>
+	  <method-selector>
+	    <script language="beanshell"><![CDATA[
+	       String grps = System.getProperty("browserToRun");
+	       return grps.contains("chrome") || grps.contains("all");
+	     ]]></script>
+	  </method-selector>
+</method-selectors>
+  <parameter name="browser" value="chrome" />
+    <classes>
+      <class name="testng.rcaap.SARI.TestSearchPresent"/>
+      <class name="testng.rcaap.SARI.TestLoginPass"/>
+      <class name="testng.rcaap.SARI.TestExternalScriptsPresent"/>
+    </classes>
+  </test> 
+  
+  <test name="SARIFirefox">
+  <!-- These are defined in the maven and in the Test Files -->
+  <!-- groups are overlaped -->
+   <method-selectors>
+	  <method-selector>
+	    <script language="beanshell"><![CDATA[
+	       String grps = System.getProperty("browserToRun");
+	       return grps.contains("firefox") || grps.contains("all");
+	     ]]></script>
+	  </method-selector>
+</method-selectors>
+  <parameter name="browser" value="firefox" />
+    <classes>
+      <class name="testng.rcaap.SARI.TestSearchPresent"/>
+      <class name="testng.rcaap.SARI.TestLoginPass"/>
+       <class name="testng.rcaap.SARI.TestExternalScriptsPresent"/>
+    </classes>
+  </test> 
+  
+  <test name="SARIHeadless">
+  <!-- These are defined in the maven and in the Test Files -->
+  <!-- groups are overlaped -->
+   <method-selectors>
+	  <method-selector>
+	    <script language="beanshell"><![CDATA[
+	       String grps = System.getProperty("browserToRun");
+	       return grps.contains("headless") || grps.contains("all");
+	     ]]></script>
+	  </method-selector>
+</method-selectors>
+  <parameter name="browser" value="headless" />
+    <classes>
+       <class name="testng.rcaap.SARI.TestSearchPresent"/> 
+       <class name="testng.rcaap.SARI.TestLoginPass"/>
+        <class name="testng.rcaap.SARI.TestExternalScriptsPresent"/>
+    </classes>
+  </test>
+</suite>

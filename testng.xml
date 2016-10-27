@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Threading count to execute paralel tests and parallel set to tests (classes see documentation) -->
+<!-- I think if We have 2 classes they will run in parallel -->
+<suite name="TestNgMaven" parallel="classes" thread-count="3"> 
+
+  <test name="TestMaven">
+    <classes>
+       <class name="testng.rcaap.SARI.TestSearchPresent"/> 
+    </classes>
+  </test>
+</suite>

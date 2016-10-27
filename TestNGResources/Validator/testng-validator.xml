@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Validator" parallel="classes" thread-count="3"> 
+  
+  <test name="Validator">
+	<!-- To activate add in Test Files @Test(groups = {"run-test", "..."} -->
+	<!-- <groups>
+			<run>
+				<include name="run-test" />
+				<exclude name="not-run" />
+			</run>
+		</groups> -->
+    <classes>
+       <class name="testng.rcaap.validator.TestValidation"/>
+    </classes>
+  </test>
+</suite>

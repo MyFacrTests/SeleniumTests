@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<!-- Threading count to execute paralel tests and parallel set to tests (classes see documentation) -->
+<!-- I think if We have 2 classes they will run in parallel -->
+
+<suite name="Validator" parallel="classes" thread-count="3"> 
+
+  <test name="ValidatorChrome">
+  <!-- These are defined in the maven and in the Test Files -->
+  <!-- groups are overlaped -->
+   <method-selectors>
+	  <method-selector>
+	    <script language="beanshell"><![CDATA[
+	       String grps = System.getProperty("browserToRun");
+	       return grps.contains("chrome") || grps.contains("all");
+	     ]]></script>
+	  </method-selector>
+</method-selectors>
+  <parameter name="browser" value="chrome" />
+   <classes>
+        <class name="testng.rcaap.validator.TestValidation"/>
+    </classes>
+  </test>  
+
+  <test name="ValidatorFirefox">
+  <!-- These are defined in the maven and in the Test Files -->
+  <!-- groups are overlaped -->
+   <method-selectors>
+	  <method-selector>
+	    <script language="beanshell"><![CDATA[
+	       String grps = System.getProperty("browserToRun");
+	       return grps.contains("firefox") || grps.contains("all");
+	     ]]></script>
+	  </method-selector>
+</method-selectors>
+  <parameter name="browser" value="firefox" />
+    <classes>
+        <class name="testng.rcaap.validator.TestValidation"/>
+    </classes>
+  </test>
+ 
+  <test name="ValidatorHeadless">
+  <!-- These are defined in the maven and in the Test Files -->
+  <!-- groups are overlaped -->
+   <method-selectors>
+	  <method-selector>
+	    <script language="beanshell"><![CDATA[
+	       String grps = System.getProperty("browserToRun");
+	       if( grps.contains("headless") || grps.contains("all"))
+	       	return true;
+	     ]]></script>
+	  </method-selector>
+</method-selectors>
+  <parameter name="browser" value="headless" />
+    <classes>
+       <class name="testng.rcaap.validator.TestValidation"/> 
+    </classes>
+  </test>
+</suite>

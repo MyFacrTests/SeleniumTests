@@ -1,0 +1,16 @@
+Verificar a possibilidade de usar Beanshell
+Verificar Groups
+Chamar outros testes de um ficheiro
+
+--- Está a ser chamdo o metodo groupsToRun e ve se existe
+-DgroupsToRun=A,B,C
+Testa-se se existe no teste e no testsuite é no beansheel que se define
+
+
+Podemos adicionar grupos e correr os métodos específicos nos grupos específicos
+
+Exemplo correr os vários testes com os grupos definidos e o que se inclui e o que se exclui no
+teste suite
+Depois nos métodos dizer que grupos queremos correr.
+
+Contudo, não é possível definir isto para correr só os browsers. Não conseguimos definir que test dentro do test suite corre ou não

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="3" guice-stage="DEVELOPMENT" name="Failed suite [SARI]" parallel="classes">
+  <test name="SARI(failed)" parallel="classes">
+    <classes>
+      <class name="testng.rcaap.SARI.TestSearchPresent">
+        <methods>
+          <include name="tearDown"/>
+          <include name="TestExistButtonSearch"/>
+        </methods>
+      </class> <!-- testng.rcaap.SARI.TestSearchPresent -->
+      <class name="testng.rcaap.SARI.TestExternalScriptsPresent">
+        <methods>
+          <include name="testPlumX"/>
+          <include name="tearDown"/>
+          <include name="testPiwik"/>
+          <include name="testGA"/>
+        </methods>
+      </class> <!-- testng.rcaap.SARI.TestExternalScriptsPresent -->
+      <class name="testng.rcaap.SARI.TestLoginPass">
+        <methods>
+          <include name="beforeTest"/>
+          <include name="testLogin"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- testng.rcaap.SARI.TestLoginPass -->
+    </classes>
+  </test> <!-- SARI(failed) -->
+</suite> <!-- Failed suite [SARI] -->
