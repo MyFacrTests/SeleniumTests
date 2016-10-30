@@ -1,8 +1,9 @@
 package common;
 
-import org.testng.annotations.BeforeTest;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
+
 import testng.rcaap.TestBase;
 
 public class Login extends TestBase {
@@ -11,7 +12,7 @@ public class Login extends TestBase {
 	protected String pass = null;
 	
 	@Parameters( {"user","pass"})
-	@BeforeTest
+	@BeforeMethod
 	  public void beforeTest(@Optional("user") String user, @Optional("pass")  String pass) {
 		/*System.out.println("USER:" + user);
 		System.out.println("PASS:" + pass);
