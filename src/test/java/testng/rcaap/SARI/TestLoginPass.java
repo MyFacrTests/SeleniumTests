@@ -24,10 +24,8 @@ public class TestLoginPass extends Login {
 
 	
 	@Test(dataProvider = "urls-all", dataProviderClass = DataProviderClass.class)
-	  public void testLogin(String url) throws Exception {
-	    driver.get(url + "/password-login");
-	    /*String user = System.getProperty("USER");
-	    String pass = System.getProperty("PASS"); */ 
+	  public void testLogin(String baseUrl) throws Exception {
+	    driver.get(baseUrl + "/password-login");
 	    System.out.println("user: " + user + "pass: " + pass);
 	    driver.findElement(By.id("tlogin_email")).sendKeys(user);
 	    driver.findElement(By.id("tlogin_password")).clear();
@@ -35,9 +33,10 @@ public class TestLoginPass extends Login {
 	    driver.findElement(By.name("login_submit")).click();
          try {
 	      assertTrue(isElementPresent(By.xpath("//main[@id='content']/div[3]/div/div")));
+	      driver.get(baseUrl + "/logout");
 	    } catch (Error e) {
 	      verificationErrors.append(e.toString());
 	    }
-	    	   driver.findElement(By.xpath("//a[contains(@href, '/logout')]")).click();
+	    	  // driver.findElement(By.xpath("//a[contains(@href, '/logout')]")).click();
 	  }
 }
