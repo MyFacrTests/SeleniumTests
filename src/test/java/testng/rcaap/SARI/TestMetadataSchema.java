@@ -17,12 +17,17 @@ public class TestMetadataSchema extends Login {
 		    driver.findElement(By.id("tlogin_password")).clear();
 		    driver.findElement(By.id("tlogin_password")).sendKeys(pass);
 		    driver.findElement(By.name("login_submit")).click();
-		    /*Thread.sleep(100);
-		    driver.get(baseUrl + "/dspace-admin/metadata-schema-registry");*/
+		    //This fails in iconline - > Cant't find user because of the layout type
 		    driver.findElement(By.xpath("//a[contains(text(), '" + user +"')]")).click();
-		    driver.get(baseUrl + "/dspace-admin");
+		    
+		    //This is the alternative to all SARIs
+                    Thread.sleep(100);
+		    driver.get(baseUrl + "/dspace-admin/metadata-schema-registry");
+		   
+                    //The next ones fails in all layouts like uab and iconline (the different ones - xpath is different)
+		    /*driver.get(baseUrl + "/dspace-admin");
 		    driver.findElement(By.xpath("(//a[contains(@href, '#')])[4]")).click();
-		    driver.findElement(By.xpath("//a[contains(@href, '/dspace-admin/metadata-schema-registry')]")).click();
+		    driver.findElement(By.xpath("//a[contains(@href, '/dspace-admin/metadata-schema-registry')]")).click();*/
 	    try {
 	    	 assertTrue(isElementPresent(By.xpath("//main[@id='content']/div[3]/form/div[3]/input")));
 	    	 driver.get(baseUrl + "/logout");
