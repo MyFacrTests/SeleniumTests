@@ -3,13 +3,17 @@
 <!-- Threading count to execute paralel tests and parallel set to tests (classes see documentation) -->
 <!-- I think if We have 2 classes they will run in parallel -->
 <suite name="SARI" parallel="classes" thread-count="3"> 
-  <test name="SARI">
+  <test name="SARI-Common">
     <classes>
        <class name="testng.rcaap.SARI.TestSearchPresent"/> 
        <class name="testng.rcaap.SARI.TestLoginPass"/>
        <class name="testng.rcaap.SARI.TestExternalScriptsPresent"/>
     </classes>
   </test>
+  <!-- <test name="SARI-Admin">
+    <classes>
+    </classes>
+  </test>-->
   <listeners>
       <listener class-name="org.uncommons.reportng.HTMLReporter"/>
       <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
