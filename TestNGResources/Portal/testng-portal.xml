@@ -3,7 +3,7 @@
 <!-- Threading count to execute paralel tests and parallel set to tests (classes see documentation) -->
 <!-- I think if We have 2 classes they will run in parallel -->
 <suite name="Portal" > 
-  <test name="Portal">
+  <test name="Portal" group-by-instances="true">
     <classes>
        <class name="testng.rcaap.portal.TestLoginAdmin"/>
        <class name="testng.rcaap.portal.TestInitialPagePortal"/>     

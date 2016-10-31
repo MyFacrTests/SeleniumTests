@@ -2,7 +2,7 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 <suite name="Validator" parallel="classes" thread-count="3"> 
   
-  <test name="Validator">
+  <test name="Validator" group-by-instances="true">
 	<!-- To activate add in Test Files @Test(groups = {"run-test", "..."} -->
 	<!-- <groups>
 			<run>
