@@ -27,7 +27,7 @@ public class TestBase {
 	@Parameters({"browser", "os"})// this annotation is used to insert browser parameter from TestNG xml or from maven
 	//@Parameters("browser")// this annotation is used to insert browser parameter from TestNG xml or from maven
 	@BeforeClass(alwaysRun = true)
-    public void setUp(String browser, @Optional("windows") String os) throws Exception {
+    public void setUp(@Optional("headless") String browser, @Optional("windows") String os) throws Exception {
     
 	  String operatingSystem = os.equalsIgnoreCase("linux") ? os : "windows";
 	  System.out.println("OS: " + operatingSystem);
