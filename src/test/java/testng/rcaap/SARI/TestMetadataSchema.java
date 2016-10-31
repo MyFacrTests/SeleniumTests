@@ -10,7 +10,7 @@ public class TestMetadataSchema extends Login {
 
 	
 
-	@Test(priority = 1, dataProvider = "urls-ldap", dataProviderClass = DataProviderClass.class)
+	@Test(priority = 1, dataProvider = "urls-all", dataProviderClass = DataProviderClass.class)
 	//@Test()
 	public void testExecuteLogin(String baseUrl) throws Exception {
 		driver.get(baseUrl + "/password-login");
@@ -28,7 +28,7 @@ public class TestMetadataSchema extends Login {
 	 * @throws Exception
 	 */
 	
-	@Test(dependsOnMethods="testExecuteLogin", dataProvider = "urls-ldap", dataProviderClass = DataProviderClass.class)
+	@Test(dependsOnMethods="testExecuteLogin", dataProvider = "urls-all", dataProviderClass = DataProviderClass.class)
 	//@Test()
 	public void testMetadataSchema(String baseUrl) throws Exception {	
 		    driver.get(baseUrl + "/dspace-admin/metadata-schema-registry");

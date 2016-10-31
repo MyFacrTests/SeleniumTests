@@ -3,17 +3,24 @@
 <!-- Threading count to execute paralel tests and parallel set to tests (classes see documentation) -->
 <!-- I think if We have 2 classes they will run in parallel -->
 <suite name="SARI" parallel="classes" thread-count="3"> 
-<<<<<<< HEAD
-  <test name="SARI" group-by-instances="true">
-=======
-  <test name="SARI-Common">
->>>>>>> dbb287792aea9dec406d92649015b553e8b1ee03
+  <test name="SARI-Common" group-by-instances="true">
     <classes>
        <class name="testng.rcaap.SARI.TestSearchPresent"/> 
        <class name="testng.rcaap.SARI.TestLoginPass"/>
+    </classes>
+  </test>
+  <test name="SARI-Admin" group-by-instances="true">
+    <classes>
+       <class name="testng.rcaap.SARI.TestMenuAdminPresent"/>
+       <class name="testng.rcaap.SARI.TestMetadataSchema"/
+    </classes>
+  </test>
+    <test name="SARI-Addons" group-by-instances="true">
+    <classes>
        <class name="testng.rcaap.SARI.TestExternalScriptsPresent"/>
     </classes>
   </test>
+
   <!-- <test name="SARI-Admin">
     <classes>
     </classes>

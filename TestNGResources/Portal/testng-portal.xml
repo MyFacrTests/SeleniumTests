@@ -2,19 +2,14 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 <!-- Threading count to execute paralel tests and parallel set to tests (classes see documentation) -->
 <!-- I think if We have 2 classes they will run in parallel -->
-<<<<<<< HEAD
-<suite name="Portal" > 
-  <test name="Portal" group-by-instances="true">
-=======
-<suite name="Portal" parallel="classes" thread-count="3"> 
-  <test name="Portal-Public">
->>>>>>> dbb287792aea9dec406d92649015b553e8b1ee03
+<suite name="Portal"  parallel="classes" thread-count="3"> 
+  <test name="Portal-Public" group-by-instances="true" >
     <classes>
        <class name="testng.rcaap.portal.TestInitialPagePortal"/>     
        <class name="testng.rcaap.portal.TestSearchPortal"/>  
     </classes>
   </test>
-   <test name="Portal-Admin">
+   <test name="Portal-Admin"  group-by-instances="true">
     <classes>
        <class name="testng.rcaap.portal.TestLoginAdmin"/>  
     </classes>
