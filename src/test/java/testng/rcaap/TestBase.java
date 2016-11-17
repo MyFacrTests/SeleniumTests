@@ -65,7 +65,9 @@ public class TestBase {
 	  }
 
    //Parameterization of implicit wait
+	driver.manage().window().maximize();
 	driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+
   }
 
 	
