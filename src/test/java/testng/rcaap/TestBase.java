@@ -49,13 +49,13 @@ public class TestBase {
 		  driver = new HtmlUnitDriver(true);
 		  
 	  }
-	  /*else if(browser.equalsIgnoreCase("phantom")){
+	  else if(browser.equalsIgnoreCase("phantom")){
 		  DesiredCapabilities cap = new DesiredCapabilities();
 		  cap.setJavascriptEnabled(true);
 		  cap.setCapability(PhantomJSDriverService.PHANTOMJS_EXECUTABLE_PATH_PROPERTY, "driver/windows/phantomjs.exe");
-		  driver = new PhantomJsDriver();
-		  
-	  }*/
+		  driver = new PhantomJSDriver(cap);
+
+	  }
 	  else{
 		  // OH NOEZ! I DOAN HAZ DAT BROWSR!
 		  System.out.println("Cannot find suitable browser driver for ["+ browser +"]");
@@ -64,7 +64,7 @@ public class TestBase {
 	  }
 
    //Parameterization of implicit wait
-	driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+	driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
   }
 
 	

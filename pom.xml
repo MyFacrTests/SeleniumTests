@@ -110,6 +110,13 @@
     <artifactId>guice</artifactId>
     <version>3.0</version>
 </dependency>
+<!-- https://mvnrepository.com/artifact/com.github.detro.ghostdriver/phantomjsdriver -->
+<dependency>
+    <groupId>com.codeborne</groupId>
+    <artifactId>phantomjsdriver</artifactId>
+    <version>1.2.1</version>
+</dependency>
+
 <!-- END OTHER KIND OF REPORTS - REPORTNG -->
 
  <!-- <dependency>
