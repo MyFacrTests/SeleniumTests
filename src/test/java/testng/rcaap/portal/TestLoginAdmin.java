@@ -53,17 +53,24 @@ public class TestLoginAdmin extends Login {
 		catch(NoAlertPresentException nae){
 			System.out.println("Firefox Alert Bypass");
 		}
-		//Needs to be here
-		Thread.sleep(5000);
-		driver.findElement(By.linkText("Adicionar")).click();
-		driver.findElement(By.name("id")).clear();
+		//Needs to be here, waiting to load the adobe flash elements
+		
+		//Thread.sleep(10000);
+		
+		driver.findElement(By.xpath("//div[@id='menu']/ul/li[3]/a")).click();
+		driver.findElement(By.xpath("//input[@name='id']")).clear();
+		driver.findElement(By.xpath("//input[@name='id']")).sendKeys("arca");
+		driver.findElement(By.xpath("//input[@name='url']")).clear();
+		driver.findElement(By.xpath("//input[@name='url']")).sendKeys("http://arca.igc.gulbenkian.pt");
+		/*driver.findElement(By.name("id")).clear();
 	    driver.findElement(By.name("id")).sendKeys("arca");
 	    driver.findElement(By.name("url")).clear();
-	    driver.findElement(By.name("url")).sendKeys("http://arca.igc.gulbenkian.pt");
+	    driver.findElement(By.name("url")).sendKeys("http://arca.igc.gulbenkian.pt");*/
 	    //Thread.sleep(3000);
 		
 	    try {
-	    	assertTrue(isElementPresent(By.cssSelector("input[type=\"submit\"]")));
+	    	//sassertTrue(isElementPresent(By.cssSelector("input[type=\"submit\"]")));
+	    	assertTrue(isElementPresent(By.xpath("//div/input")));
 	    } catch (Error e) {
 	      verificationErrors.append(e.toString());
 	    }

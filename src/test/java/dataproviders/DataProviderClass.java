@@ -147,5 +147,16 @@ public class DataProviderClass {
               .map(s -> new Object[]{s})
               .iterator();
 	  }
+	  
+	  @DataProvider(name = "cpre")
+	  public static Iterator<Object[]> cpre() {
+      String[] urls = {
+    		  "http://comum-rcaap.pre.rcaap.pt"
+       
+      };
+      return Arrays.stream(urls)
+              .map(s -> new Object[]{s})
+              .iterator();
+	  }
 	   
 }

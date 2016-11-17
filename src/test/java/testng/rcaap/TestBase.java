@@ -13,6 +13,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Optional;
 //import org.testng.annotations.Optional;
@@ -64,19 +66,41 @@ public class TestBase {
 	  }
 
    //Parameterization of implicit wait
-	driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+	driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
   }
 
 	
 	//Should be in the super class
-	  @AfterClass(alwaysRun = true)
-	 // @AfterMethod()
+	 //@AfterClass(alwaysRun = true)
+	 //@AfterMethod()
+	@AfterTest()
 	  public void tearDown() throws Exception {
-	    driver.quit();
-	    String verificationErrorString = verificationErrors.toString();
-	    if (!"".equals(verificationErrorString)) {
-	      fail(verificationErrorString);
-	    }
+	    //driver.close();
+		if(driver != null){
+			driver.quit();
+		    String verificationErrorString = verificationErrors.toString();
+		    if (!"".equals(verificationErrorString)) {
+		      fail(verificationErrorString);
+		    }
+		}
+	  }
+	
+	//Should be in the super class
+		// @AfterClass(alwaysRun = true)
+		 //@AfterMethod()
+		//@AfterTest()
+	/*	  public void tearDown() throws Exception {
+		    //driver.close();
+			if(driver != null)
+				driver.quit();
+		   
+		  }*/
+	
+	@AfterClass()
+	public void tearDownClass() throws Exception {
+	    //driver.close();
+		driver.quit();
+	   
 	  }
 	  
 	  protected boolean isElementPresent(By by) {

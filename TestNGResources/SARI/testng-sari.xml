@@ -9,12 +9,12 @@
        <class name="testng.rcaap.SARI.TestLoginPass"/>
     </classes>
   </test>
-  <test name="SARI-Admin" group-by-instances="true">
+<!--  <test name="SARI-Admin" group-by-instances="true">
     <classes>
        <class name="testng.rcaap.SARI.TestMenuAdminPresent"/>
-       <class name="testng.rcaap.SARI.TestMetadataSchema"/
+       <class name="testng.rcaap.SARI.TestMetadataSchema"/>
     </classes>
-  </test>
+  </test> -->
     <test name="SARI-Addons" group-by-instances="true">
     <classes>
        <class name="testng.rcaap.SARI.TestExternalScriptsPresent"/>
