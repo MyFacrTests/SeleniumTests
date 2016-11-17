@@ -2,6 +2,7 @@ package testng.rcaap;
 
 import static org.testng.Assert.fail;
 
+import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.Alert;
@@ -14,6 +15,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 import org.openqa.selenium.phantomjs.PhantomJSDriver;
 import org.openqa.selenium.phantomjs.PhantomJSDriverService;
+import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
@@ -55,10 +57,17 @@ public class TestBase {
 		  //driver = new CustomHTMLDriver();
 		  
 	  }
+	  //Doesn't work with basic http authentication - Not found yet a solution
 	  else if(browser.equalsIgnoreCase("phantom")){
-		  DesiredCapabilities cap = new DesiredCapabilities();
-		  cap.setJavascriptEnabled(true);
+		  ArrayList<String> cliArgsCap = new ArrayList<String>();
+		  DesiredCapabilities cap = DesiredCapabilities.phantomjs();
 		  cap.setCapability(PhantomJSDriverService.PHANTOMJS_EXECUTABLE_PATH_PROPERTY, "driver/windows/phantomjs.exe");
+		  cap.setJavascriptEnabled(true);
+		  cliArgsCap.add("--ignore-ssl-errors=true");
+		  cliArgsCap.add("--web-security=false");
+		  cap.setCapability(
+				    PhantomJSDriverService.PHANTOMJS_CLI_ARGS, cliArgsCap);
+		  
 		  driver = new PhantomJSDriver(cap);
 
 	  }
