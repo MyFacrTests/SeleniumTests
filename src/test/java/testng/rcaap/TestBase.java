@@ -46,16 +46,17 @@ public class TestBase {
 	  }
 	  else if(browser.equalsIgnoreCase("headless")){
 		  //Enable Javascript = true
-		  driver = new HtmlUnitDriver(true);
+		  //driver = new HtmlUnitDriver(true);
+		  driver = new CustomHTMLDriver();
 		  
 	  }
-	  /*else if(browser.equalsIgnoreCase("phantom")){
+	  else if(browser.equalsIgnoreCase("phantom")){
 		  DesiredCapabilities cap = new DesiredCapabilities();
 		  cap.setJavascriptEnabled(true);
 		  cap.setCapability(PhantomJSDriverService.PHANTOMJS_EXECUTABLE_PATH_PROPERTY, "driver/windows/phantomjs.exe");
 		  driver = new PhantomJSDriver(cap);
 
-	  }*/
+	  }
 	  else{
 		  // OH NOEZ! I DOAN HAZ DAT BROWSR!
 		  System.out.println("Cannot find suitable browser driver for ["+ browser +"]");
