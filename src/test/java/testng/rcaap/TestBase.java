@@ -46,8 +46,8 @@ public class TestBase {
 	  }
 	  else if(browser.equalsIgnoreCase("headless")){
 		  //Enable Javascript = true
-		  //driver = new HtmlUnitDriver(true);
-		  driver = new CustomHTMLDriver();
+		  driver = new HtmlUnitDriver(true);
+		  //driver = new CustomHTMLDriver();
 		  
 	  }
 	  else if(browser.equalsIgnoreCase("phantom")){
