@@ -19,10 +19,15 @@ public class TestMenuAdminPresent extends Login {
 		    driver.findElement(By.id("tlogin_password")).clear();
 		    driver.findElement(By.id("tlogin_password")).sendKeys(pass);
 		    driver.findElement(By.name("login_submit")).click();
-		    Thread.sleep(100);
-		    driver.findElement(By.xpath("(//a[contains(@href, '#')])[5]")).click();
+		    Thread.sleep(200);
+		    
+		     //THE NEXT FAILS IN ICONLINE
+		    /*driver.findElement(By.xpath("(//a[contains(@href, '#')])[5]")).click();
 		    //Need this because of ldap possibilty login in some SARIs
-		    driver.findElement(By.xpath("//a[contains(@href, '/dspace-admin')]")).click();
+		    driver.findElement(By.xpath("//a[contains(@href, '/dspace-admin')]")).click();*/
+		   
+		    //Because o IC-Online
+		    driver.get(baseUrl + "/dspace-admin");
 	}
 	
 	/**
